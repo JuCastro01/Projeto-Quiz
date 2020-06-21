@@ -1,3 +1,4 @@
+  
 #Júlia Carvalho de Souza Castro TIA:32022298 
 #Gabriel Batista Cristiano. TIA:32090722 
 #Fábio Silveira Tanikawa. TIA:32092563
@@ -13,7 +14,7 @@ def boasvindas():
 def Nivel():
     time.sleep(5)
     print(" Escolha o nivel de dificuldade:\n")
-    level = int(input(" 1.Maratona\n 2. Facil\n 3. Médio\n 4. Difícil\n"))
+    level = int(input(" 1.Fácil \n 2.Médio \n 3. Maratona(jogar todas as perguntas)\n"))
     while(level > 3 or level < 1):
         level = int(input(" Opção inválida. Digite uma das opções a seguir:\n 1. Facil\n 2. Médio\n 3. Difícil\n"))
     return level
@@ -131,13 +132,64 @@ def Maratona():
     P1()
     P2()
     P3()
+    P4()
+    P5()
+    P6()
+    P7()
+    P8()
+    P9()
+    P10()
+    
+def Facil():
+    cont=0
+    P1()
+    P2()
+    P4()
+    P6()
+    P9()
+
+def Medio():
+    cont=0
+    P3()
+    P5()
+    P7()
+    P8()
+    P10()
+
+
+pergfacil= [1,2,4,6,9]
+pergmedio= [3,5,7,8,10]
+pergmaratona= [1,2,3,4,5,6,7,8,9,10]
+
+respfacil= [B, E, E, B, C]
+respmedio= [B, C, A, B, B]
+respmaratona= [B, E, B, E, C, B, A, B, C, B]
+
+def final():
+    if level==1:
+        print ("As perguntas respondidas foram:", pergfacil)
+        print ("As respostas dessas questoes eram respectivamente:",respfacil)
+
+    elif level==2:
+        print ("As perguntas respondidas foram:", pergmedio)
+        print ("As respostas dessas questoes eram respectivamente:",respmedio)
+
+    elif level==3:
+        print ("As perguntas respondidas foram:", pergmaratona)
+        print ("As respostas dessas questoes eram respectivamente:",respmaratona)
+    print ("logo sua pontuação foi:", cont)
 
 def main():
     boasvindas()
     opcao = Nivel()
 
     if(opcao == 1):
-        Maratona()
+        facil()
+    elif(opcao == 2):
+        medio()
+    elif(opcao == 3):
+        maratona()
    
 
 main()
+
